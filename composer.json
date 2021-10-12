@@ -1,0 +1,120 @@
+{
+    "name": "{$vendor}/{$name}",
+    "type": "webfan-${package.webfantizing}-${type.oid}",
+    "description": "${package.description}",
+    "keywords": [ "${project.identifier}", "webfan-module" ,   "webfan-${package.webfantizing}",   "${package.type}"],
+    "homepage": "https://registry.frdl.de/codebase/${package.vendor}/${package.name}",
+    "license": "${package.license.key}",
+     "minimum-stability":"dev",
+        "installer-types": [
+                             "oidplus-plugin", 
+                             "library", 
+                             "project", 
+                             "package", 
+                             "webfan-page",
+                             "webfan-workspace",
+                             "gh-pages",
+                             "git-repository", 
+                             "git",
+                             "node-package", 
+                             "webfan-library", 
+                             "webfan-feature", 
+                             "webfan-site", 
+                             "webfan-plugin", 
+                             "webfan-stage", 
+                             "webfan-module", 
+                             "webfan-deployment", 
+                             "webfan-config", 
+                             "webfan-environment", 
+                             "webfan-setup", 
+                             "webfan-runtime", 
+                             "webfan-server", 
+                             "webfan-assets", 
+                             "webfan-asset", 
+                             "webfan-widget", 
+                             "widget", 
+                             "chunk", 
+                             "package-chunk", 
+                             "webfan-shared", 
+                             "webfan-docroot", 
+                             "webfan-container", 
+                             "webfan-vhost", 
+                             "webfan-webspace", 
+                             "webfan-api", 
+                             "webfantized", 
+                             "*-webfantized", 
+                             "webfantized-*", 
+                             "*-webfantized-*", 
+                             "webfan-app", 
+                             "webfan-sdk"
+        ],
+        "installer-paths": {
+            "~/git/{$vendor}.{$name}/": ["{$vendor}/{$name}"],
+            "~/git/{$vendor}.{$name}/": ["type:git-repository"],
+            "~/git/{$vendor}.{$name}/": ["type:git"],
+            "~/git/{$vendor}.{$name}/": ["type:project"],
+            "~/git/{$vendor}.{$name}/": ["type:package"],
+            "~/httpdocs/{$name}/public/": ["type:webfan-docroot"],
+            "~/config/{$type}/{$name}/": ["type:*-config"],
+            "~/config/{$type}/webfantized/{$name}/": ["type:webfan-config"],
+            "~/{$name}": ["type:webfan-vhost"],
+            "~": ["type:webfan-webspace"],
+            "~/git/{$vendor}.{$name}/": ["type:webfan-webspace"],
+            "vendor/{$vendor}/{$name}/": ["type:library"],
+            "plugins/{$vendor}/{$name}/": ["type:oidplus-plugin"],
+            "~/.frdl/WORKSPACE/{$name}/": ["type:workspace"],
+            "{$name}": ["type:chunk"]
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https:\/\/packages.frdl.de"
+        },  
+        {
+            "type": "composer",
+            "url": "https:\/\/packages.frdl.de"
+        },  
+        {
+            "type": "composer",
+            "url": "https:\/\/packages.frdl.de"
+        }  
+    ], 
+    "config": {  
+         "platform-check": false
+    },
+    "authors": [
+        {
+            "name": "Contributors",
+            "homepage": "http://api.webfan.de/${container.identifier}/${project.identifier}/${package.vendor}/${package.name}/meta/contributors"
+        },
+        {
+            "name": "${package.authors.0.name}",
+            "email": "${package.authors.0.emai}",
+            "homepage": "${package.authors.0.homepage}",
+            "role": "${package.authors.0.role}"
+        }
+    ],
+    "support": {
+        "docs": "https://api.webfan.de/apps/packages/${package.vendor}/${package.name}/doc",
+        "issues": "https://api.webfan.de/apps/packages/${package.vendor}/${package.name}/issues",
+        "source": "https://api.webfan.de/${container.identifier}/${project.identifier}/modules/${package.vendor}/${package.name}/composer"
+    },
+    "require": {
+        "php": ">=7.2 | >= 8.0", 
+	"oomphinc/composer-installers-extender":"*",
+        "${package.vendor}/${package.name}-metapackage":"*"
+    },
+    "suggest": {          
+		   
+    },
+    "autoload": {
+         "classmap" : [
+              "src-dev/",
+              "shared/"
+          ],
+         "psr4" : {
+                "${package.app.php.namespace}\\" : "src-psr4/"
+          }
+    }
+}
