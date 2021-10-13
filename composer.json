@@ -69,17 +69,17 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https:\/\/packages.frdl.de"
-        },  
+            "url": "https:\/\/get.webfan.pro"
+        },   
         {
             "type": "composer",
             "url": "https:\/\/packages.frdl.de"
-        },  
+        },   
         {
             "type": "composer",
-            "url": "https:\/\/packages.frdl.de"
+            "url": "https:\/\/api.webfan.de/apps/composer"
         }  
-    ], 
+    ],  
     "config": {  
          "platform-check": false
     },
